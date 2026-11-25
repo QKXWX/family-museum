@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "family-museum"
+version = "0.1.0"
+description = "把照片整理成一座可离线打开的家庭数字博物馆"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "QKXWX"}]
+dependencies = ["Pillow>=9.0"]
+
+[project.scripts]
+family-museum = "family_museum.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["family_museum*"]
+
+[tool.setuptools.package-data]
+family_museum = ["web/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]

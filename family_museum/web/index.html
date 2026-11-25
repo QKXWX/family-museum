@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}} · 家展</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">FAMILY MUSEUM / 家展</div>
+    <h1 id="title">{{TITLE}}</h1>
+    <p class="lead">把散落在硬盘里的照片，重新布展。</p>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="hero-note">本地生成 · 不上传云端</div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="section-head"><h2>展厅</h2><p>按年份与季节自动布展</p></div>
+    <div id="exhibitions" class="exhibitions"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>时间轴</h2><p>点一个年份，看那一年</p></div>
+    <div id="years" class="years"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>展品</h2>
+      <div class="filters">
+        <input id="search" placeholder="搜索文件、相册、日期" autocomplete="off">
+        <button id="btnAll" class="pill">全部</button>
+      </div>
+    </div>
+    <div id="status" class="result-line"></div>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<footer class="foot">家展 · 本地静态页面 · 照片仍在你自己的硬盘上</footer>
+
+<div id="lightbox" class="lightbox hidden">
+  <button id="close" aria-label="关闭">×</button>
+  <div class="light-inner"><img id="lightImg" alt=""><div id="lightCaption"></div></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
